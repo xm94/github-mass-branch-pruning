@@ -1,0 +1,6 @@
+{
+    "github_token": "<your token here>",
+    "target_repo": "<branch_org/branch_name>",
+    "branch_list": ["main","master","dev","develop","development","stable","prod","production"],
+    "delete_prs": false
+}
