@@ -1,16 +1,29 @@
 #!/usr/bin/python
 
 import sys
+import json
 from github import Github
 
+f = open('config.json')
+config = json.load(f)
+
+#defaults
+branch_list = ['main','master','dev','develop','development','stable','prod','production']
+delete_prs = False
+
+# overwrite config with file if it exists
+if config["branch_list"]:
+    branch_list = config["branch_list"]
+
+if config["delete_prs"]:
+    delete_prs = config["delete_prs"]
+
+target_repo = config["target_repo"]
+github_token = config["github_token"]
+
 # using an access token
-g = Github("<token here>")
-
-# print('Argument List:', str(sys.argv))
-
-branch_list = ['main','master','dev','stable','prod']
-
-repo = g.get_repo("xm94/zzztestrepo") #using my test repo for now
+g = Github(github_token)
+repo = g.get_repo(target_repo)
 
 open_branches = []
 
