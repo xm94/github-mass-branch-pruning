@@ -2,6 +2,8 @@
 
 This is a small python script made for the purpose of pruning leftover branches by using the [PyGithub library](https://github.com/PyGithub/PyGithub) (be sure to check them out!)
 
+Note: Be sure to install the `PyGithub` library, not `github`
+
 
 ## Usage
 
